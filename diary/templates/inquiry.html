@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}お問い合わせ | IT'S NICE TO MEET YOU
+{% endblock %}
+
+{% block active_inquiry %}active{% endblock %}
+
+{% block header %}{% endblock %}
+
+
+
+
+
+    {% if messages %}
+
+    <div class="container my-div-style">
+
+        <div class="row">
+
+            <ul class="messages" style="list-style: none;">
+
+                {% for message in messages %}
+
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+
+                    {{ message }}
+
+                </li>
+
+                {% endfor %}
+
+            </ul>          
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+{% block contents %}
+<div class="container">
+    <div class="my-div-style">
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+            <div class="mb-4 col-8">
+                <label for="{{ field.id_for_label }}" class="form-label">
+                    <strong>{{ field.label_tag }}</strong>
+                </label>
+                {{ field }}
+                {{ field.errors }}
+            </div>
+            {% endfor %}
+
+            <button class="btn btn-primary" type="submit">送信</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
