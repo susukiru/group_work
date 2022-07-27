@@ -28,10 +28,10 @@
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div class="container px-5">
-          <a class="navbar-brand" href="{% url 'diary:index2' %}">page-top</a>
+          <a class="navbar-brand" href="{% url 'diary:index2' %}">Start Bootstrap</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link {% block active_inquiry %}{% endblock %}" href="{% url 'diary:inquiry' %}">INQUIRY</a>
               </li>
@@ -41,8 +41,6 @@
                 href="{% url 'diary:diary_list' %}">DIARY LIST</a>
               </li>
               {% endif %}
-            </ul>
-            <ul class="navbar-nav ms-auto">
               {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
@@ -50,7 +48,7 @@
               {% else %}
 
               <li class="nav-item">
-                <a class="nav-link" href="{%url 'account_signup' %}">Sign Up</a>
+                <a class="nav-link"  href="{%url 'account_signup' %}">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{%url 'account_login' %}">Log In</a>

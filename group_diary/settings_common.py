@@ -182,4 +182,4 @@ DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
 
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = 'diary:siary'
+LOGIN_REDIRECT_URL = 'diary:diary_list'
