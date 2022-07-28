@@ -53,4 +53,14 @@ LOGGING = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
+# コンソール用
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Gmail用
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+# Gmailのメールサーバーへの接続設定
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = <Gmailのメールアドレス>
+#EMAIL_HOST_PASSWORD = <Gmailのパスワード>
+#EMAIL_USE_TLS = True
